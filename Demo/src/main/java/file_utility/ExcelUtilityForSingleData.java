@@ -28,8 +28,7 @@ public class ExcelUtilityForSingleData {
 	 */
 	public String readExcelData(String sheetname,int row,int cell) throws EncryptedDocumentException, IOException
 	{
-//		String path="./src/test/resources/testscript_data/testscript1.xlsx";
-		String path="./src/test/resources/testscript_data/testscript_OBC.xlsx";
+		String path="./src/test/resources/testscript_data/testscript1.xlsx";
 		FileInputStream fis=new FileInputStream(path);
 		Workbook workbook = WorkbookFactory.create(fis);
 		String data = null;
@@ -52,7 +51,7 @@ public class ExcelUtilityForSingleData {
 	
 	public void writeData(String sheetName,int rowNo,int cellNo,String value)
 	{
-		 String filePath = "C:\\Users\\Harshitha\\Downloads\\Demo\\Demo\\src\\test\\resources\\testscript_data\\testscript_OBC.xlsx";
+		 String filePath = "./src/test/resources/testscript_data/testscript1.xlsx";
 	        try (FileInputStream fis = new FileInputStream(filePath);
 	             Workbook workbook = WorkbookFactory.create(fis)) {
 

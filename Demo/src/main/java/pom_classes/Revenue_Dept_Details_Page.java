@@ -41,6 +41,11 @@ public class Revenue_Dept_Details_Page {
 	@FindBy(xpath = "//h1[contains(text(),'OBC CERTIFICATE')]/ancestor::div[@class='flip_box text-center']")
 	private WebElement obcCertificateServiceLink;
 	
-	
+	@FindBy(xpath = "//h1[text()='RESIDENCE CERTIFICATE']/ancestor::div[@class='flip_box text-center']")
+	private WebElement residenceCertificateServiceLink;
+
+	public WebElement getResidenceCertificateServiceLink() {
+		return residenceCertificateServiceLink;
+	}
 	
 }

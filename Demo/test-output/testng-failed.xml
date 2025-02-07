@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Revenue_OBC_Certificate_Service.Obc_Dept_01">
+      <class name="Revenue_Residence_Certificate_Service.residence_application_01">
         <methods>
+          <include name="residence_process_01"/>
           <include name="configAfterMethod"/>
           <include name="configBeforeClass"/>
           <include name="configBeforeMethod"/>
           <include name="beforeTest"/>
           <include name="configAfterSuite"/>
-          <include name="OBC_Dept_Proces_01"/>
           <include name="configBeforeSuite"/>
           <include name="afterTest"/>
           <include name="configAfterClass"/>
         </methods>
-      </class> <!-- Revenue_OBC_Certificate_Service.Obc_Dept_01 -->
+      </class> <!-- Revenue_Residence_Certificate_Service.residence_application_01 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
