@@ -214,8 +214,30 @@ public class BaseClass {
 			//enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
-			
 		}
+			else if (this.getClass().getName().contains("residence_Dept_01")) {
+				//enter loginid
+				assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
+				assertValidate.assertByEnabled(login.getLoginIdTextField());
+				login.getLoginIdTextField().click();
+				login.getLoginIdTextField().sendKeys(property.readProperty("loginid2"));
+				
+				//enter password
+				login.getPasswordTextField().click();
+				login.getPasswordTextField().sendKeys(property.readProperty("password"));
+					
+		} 
+			else if(this.getClass().getName().contains("Birth_Application_01")) {
+				//enter loginid
+				assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
+				assertValidate.assertByEnabled(login.getLoginIdTextField());
+				login.getLoginIdTextField().click();
+				login.getLoginIdTextField().sendKeys(property.readProperty("loginid"));
+				
+				//enter password
+				login.getPasswordTextField().click();
+				login.getPasswordTextField().sendKeys(property.readProperty("password"));
+			}
 		//click on login button
 		login.getLoginButton().click();
 	}

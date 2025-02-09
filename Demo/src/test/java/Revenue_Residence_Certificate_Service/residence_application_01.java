@@ -64,6 +64,8 @@ public class residence_application_01 extends BaseClass {
 
 		System.out.println("application no : " + res.getApplicationNumberTextField().getAttribute("value"));
 
+		Thread.sleep(2000);
+
 		// entering aadhaar no
 		System.out.println("aadhaar no");
 		assertValidate.assertByWebelementVisibility(res.getAadhaarNoText());
@@ -72,6 +74,8 @@ public class residence_application_01 extends BaseClass {
 
 		res.getAadhaarNoTextField().sendKeys(excel.readExcelData("Residence_User_Data", 1, 1));
 
+		Thread.sleep(2000);
+
 		// entering applicant name
 		System.out.println("applicant name");
 		assertValidate.assertByWebelementVisibility(res.getApplicantNameText());
@@ -79,6 +83,8 @@ public class residence_application_01 extends BaseClass {
 		assertValidate.assertByEnabled(res.getApplicantNameTextField());
 
 		res.getApplicantNameTextField().sendKeys(excel.readExcelData("Residence_User_Data", 2, 1));
+
+		Thread.sleep(2000);
 
 		// entering father/husband/mother/guardian name
 		System.out.println("father/husband/mother/guardian name");
@@ -89,13 +95,17 @@ public class residence_application_01 extends BaseClass {
 		res.getFatherOrHusbandOrMotherOrGuardianNameTextField()
 				.sendKeys(excel.readExcelData("Residence_User_Data", 3, 1));
 
+		Thread.sleep(2000);
+
 		// selecting gender
 		System.out.println("gender");
 		assertValidate.assertByWebelementVisibility(res.getGenderText());
 		assertValidate.assertByWebelementVisibility(res.getGenderDropDown());
 		assertValidate.assertByEnabled(res.getGenderDropDown());
 
-		wUtility.select(res.getGenderDropDown(), 1);
+		wUtility.select(res.getGenderDropDown(), 0);
+
+		Thread.sleep(2000);
 
 		// selecting dob
 		System.out.println("date of birth");
@@ -106,9 +116,13 @@ public class residence_application_01 extends BaseClass {
 		wUtility.enterDataUsingJavaScript(driver, res.getDateOfBirthTextField(),
 				excel.readExcelData("Residence_User_Data", 9, 1));
 
+		Thread.sleep(2000);
+
 		// permanent address
 		System.out.println("permanent address secction");
 		assertValidate.assertByWebelementVisibility(res.getPermanentAddressText());
+
+		Thread.sleep(2000);
 
 		// entering door no
 		System.out.println("door no");
@@ -117,8 +131,6 @@ public class residence_application_01 extends BaseClass {
 		assertValidate.assertByEnabled(res.getDoorNoTextField());
 
 		res.getDoorNoTextField().sendKeys(excel.readExcelData("Residence_User_Data", 4, 1));
-
-		Thread.sleep(2000);
 
 		Thread.sleep(2000);
 		// selecting district
@@ -148,28 +160,7 @@ public class residence_application_01 extends BaseClass {
 
 		wUtility.select(res.getVillageOrWardDropDown(), 1);
 
-		// pincode
-		System.out.println("pincode");
-		assertValidate.assertByWebelementVisibility(res.getPincodeText());
-		assertValidate.assertByWebelementVisibility(res.getPincodeTextField());
-		assertValidate.assertByEnabled(res.getPincodeTextField());
-
-		res.getPincodeTextField().sendKeys(excel.readExcelData("Residence_User_Data", 6, 1));
-
-		// entering locality
-//		System.out.println("locality");
-//		assertValidate.assertByWebelementVisibility(res.getLocalityOrLandmarkText());
-//		assertValidate.assertByWebelementVisibility(res.getLocalityOrLandmarkTextField());
-//		assertValidate.assertByEnabled(res.getLocalityOrLandmarkTextField());
-//		res.getLocalityOrLandmarkTextField().sendKeys(excel.readExcelData("Residence_User_Data", 5, 1));
-
-		// mobile no
-		System.out.println("mobile no");
-		assertValidate.assertByWebelementVisibility(res.getMobileNoText());
-		assertValidate.assertByWebelementVisibility(res.getMobileNoTextField());
-		assertValidate.assertByEnabled(res.getMobileNoTextField());
-
-		res.getMobileNoTextField().sendKeys(excel.readExcelData("Residence_User_Data", 7, 1));
+		Thread.sleep(2000);
 
 		// delivery type
 		System.out.println("delivery type");
@@ -179,12 +170,34 @@ public class residence_application_01 extends BaseClass {
 
 		wUtility.select(res.getDeliveryTypeDropDown(), 1);
 
+		Thread.sleep(2000);
 		wUtility.switchToAlertAndAccept(driver);
 		Thread.sleep(2000);
 
+		// pincode
+		System.out.println("pincode");
+		assertValidate.assertByWebelementVisibility(res.getPincodeText());
+		assertValidate.assertByWebelementVisibility(res.getPincodeTextField());
+		assertValidate.assertByEnabled(res.getPincodeTextField());
+
+		res.getPincodeTextField().sendKeys(excel.readExcelData("Residence_User_Data", 6, 1));
+		Thread.sleep(2000);
+
+//		wUtility.scrollDownByKey(2);
+		// mobile no
+		System.out.println("mobile no");
+		assertValidate.assertByWebelementVisibility(res.getMobileNoText());
+		assertValidate.assertByWebelementVisibility(res.getMobileNoTextField());
+		assertValidate.assertByEnabled(res.getMobileNoTextField());
+
+		res.getMobileNoTextField().sendKeys(excel.readExcelData("Residence_User_Data", 7, 1));
+
+		Thread.sleep(2000);
 		// residence certificate details
 		System.out.println("residence certificate details");
 		assertValidate.assertByWebelementVisibility(res.getResidenceCertificateDetailstText());
+		wUtility.scroll(driver, res.getShowPaymentButton());
+		while_Run();
 
 		// purpose
 		System.out.println("purpose");
@@ -193,21 +206,15 @@ public class residence_application_01 extends BaseClass {
 		assertValidate.assertByEnabled(res.getPurposeDropDown());
 
 		wUtility.select(res.getPurposeDropDown(), 1);
-
-		// residing since
-		System.out.println("residing since");
-		assertValidate.assertByWebelementVisibility(res.getResidingSinceInYearsText());
-		assertValidate.assertByWebelementVisibility(res.getResidingSinceTextField());
-		assertValidate.assertByEnabled(res.getResidingSinceTextField());
-		res.getResidingSinceTextField().click();
-		wUtility.deleteByKey(1);
-		res.getResidingSinceTextField().sendKeys(excel.readExcelData("Residence_User_Data", 8, 1));
+		Thread.sleep(2000);
 
 		while_Run();
+		Thread.sleep(2000);
 
 		// clicking supporting docs checkbox
 		System.out.println("supporting docs checkbox");
 		assertValidate.assertByWebelementVisibility(res.getSupportingDocumentsText());
+		wUtility.scroll(driver, res.getShowPaymentButton());
 		assertValidate.assertByWebelementVisibility(res.getSupportingDocumentsCheckBox());
 		assertValidate.assertByEnabled(res.getSupportingDocumentsCheckBox());
 		res.getSupportingDocumentsCheckBox().click();
@@ -219,7 +226,8 @@ public class residence_application_01 extends BaseClass {
 		assertValidate.assertByWebelementVisibility(res.getSupportingDocumentsFileUpload());
 		assertValidate.assertByEnabled(res.getSupportingDocumentsFileUpload());
 		wUtility.click(driver, res.getSupportingDocumentsFileUpload());
-		wUtility.uploadFile("C:\\Users\\Harshitha\\Downloads\\Demo\\Demo\\src\\test\\resources\\image\\demo.pdf");
+		wUtility.uploadFile(
+				"C:\\Users\\DELL\\Documents\\Meeseva_Automation\\Demo\\src\\test\\resources\\image\\demo.pdf");
 
 		Thread.sleep(2000);
 		wUtility.switchToAlertAndAccept(driver);
@@ -232,23 +240,48 @@ public class residence_application_01 extends BaseClass {
 		assertValidate.assertByEnabled(res.getPassportSizePhotoCheckBox());
 		res.getPassportSizePhotoCheckBox().click();
 
+		wUtility.scroll(driver, res.getShowPaymentButton());
 		Thread.sleep(2000);
+		while_Run();
 		// uploading photo
 		System.out.println("photo upload");
 		assertValidate.assertByWebelementVisibility(res.getPhotoFileUpload());
 		assertValidate.assertByEnabled(res.getPhotoFileUpload());
 		wUtility.click(driver, res.getPhotoFileUpload());
-		wUtility.uploadFile("C:\\Users\\Harshitha\\Downloads\\Demo\\Demo\\src\\test\\resources\\image\\image2.jpg");
+		wUtility.uploadFile("C:\\Users\\DELL\\Documents\\Meeseva_Automation\\Demo\\src\\test\\resources\\image\\image2.jpg");
 
 		Thread.sleep(2000);
-		res.getLocalityOrLandmarkTextField().sendKeys(excel.readExcelData("Residence_User_Data", 5, 1));
-		Thread.sleep(2000);
+
 		while_Run();
 
+		// entering locality
+		System.out.println("locality");
+		assertValidate.assertByWebelementVisibility(res.getLocalityOrLandmarkText());
+		assertValidate.assertByWebelementVisibility(res.getLocalityOrLandmarkTextField());
+		assertValidate.assertByEnabled(res.getLocalityOrLandmarkTextField());
+		res.getLocalityOrLandmarkTextField().sendKeys(excel.readExcelData("Residence_User_Data", 5, 1));
+		Thread.sleep(2000);
+
+		wUtility.scrollDownByKey(5);
+		while_Run();
+		
+		// residing since
+		System.out.println("residing since");
+		assertValidate.assertByWebelementVisibility(res.getResidingSinceInYearsText());
+		assertValidate.assertByWebelementVisibility(res.getResidingSinceTextField());
+		assertValidate.assertByEnabled(res.getResidingSinceTextField());
+		res.getResidingSinceTextField().click();
+		wUtility.deleteByKey(1);
+		res.getResidingSinceTextField().click();
+		res.getResidingSinceTextField().sendKeys(excel.readExcelData("Residence_User_Data", 8, 1));
+		Thread.sleep(2000);
+		while_Run();
+		
 		// show payment button
 		System.out.println("show payment button");
+		Thread.sleep(2000);
 		res.getShowPaymentButton().click();
-
+		Thread.sleep(2000);
 		wUtility.switchToAlertAndAccept(driver);
 		Thread.sleep(2000);
 
@@ -285,12 +318,13 @@ public class residence_application_01 extends BaseClass {
 
 		while_Run();
 
-//		wUtility.scrollDownByKey(2);
+		wUtility.scrollDownByKey(5);
+		while_Run();
 		// clicking on confirm payment button
 		System.out.println("confirm payment");
 		assertValidate.assertByWebelementVisibility(res.getConfirmPaymentButton());
 		res.getConfirmPaymentButton().click();
-
+		while_Run();
 		Thread.sleep(3000);
 
 		while_Run();
@@ -334,7 +368,7 @@ public class residence_application_01 extends BaseClass {
 
 		// make payment
 		assertValidate.assertByWebelementVisibility(res.getMakePaymentButton());
-
+		wUtility.scrollDownByKey(5);
 		res.getMakePaymentButton().click();
 		Thread.sleep(3000);
 		while_Run();

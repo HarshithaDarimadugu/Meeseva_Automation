@@ -18,5 +18,19 @@ public class Access_Page {
 	public WebElement getRevenueDepartmentLink() {
 		return revenueDepartmentLink;
 	}
+	
+	@FindBy(xpath = "//img[@alt='ghmc']/parent::a")
+	private WebElement ghmcDepartmentLink;
+
+	public WebElement getGhmcDepartmentLink() {
+		return ghmcDepartmentLink;
+	}
+	
+	@FindBy(id = "autocomplete")
+	private WebElement searchBarTextField;
+	
+	@FindBy(xpath = " //h1[contains(text(),'REGISTRATION OF FIRMS')]/ancestor::div[@class='flip_box text-center']")
+	private WebElement registrationOfFirmLink;
+	
 
 }

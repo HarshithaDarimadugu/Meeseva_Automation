@@ -145,6 +145,6 @@ public class ADB_MRO_Need_Basis_Page {
 		return needBasisTableDataText;
 	}
 	
-	
+
 
 }
