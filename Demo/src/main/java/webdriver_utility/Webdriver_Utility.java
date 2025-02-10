@@ -585,27 +585,22 @@ public class Webdriver_Utility {
 		  }
 	  }
 	  
-	  public void emSigner() throws Throwable
-	  {
-		  Robot robot = new Robot();
-	        robot.delay(3000);
- 
-	        // Move mouse to the location of the "Register" button and click
-	        robot.mouseMove(769, 440);
-	        //robot.mouseMove(800, 400);
-//	        robot.mouseMove(1000, 480);
-	        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-	        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-	        Thread.sleep(2000);
-	        robot.keyPress(KeyEvent.VK_ENTER);
-	        robot.keyRelease(KeyEvent.VK_ENTER);
-	        Thread.sleep(2000);
-	        
-	        robot.mouseMove(1000, 580);
-	        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-	        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-	        Thread.sleep(2000);
-	        robot.keyPress(KeyEvent.VK_ENTER);
-	        robot.keyRelease(KeyEvent.VK_ENTER);
-	  }
+		public void emSigner() throws Throwable {
+			Robot robot = new Robot();
+			robot.delay(3000);
+
+			// Move mouse to the first certificate and click by the use of mouse
+			robot.mouseMove(1000, 590);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+			Thread.sleep(2000);
+//	      	robot.keyPress(KeyEvent.VK_ENTER);
+//	      	robot.keyRelease(KeyEvent.VK_ENTER);
+
+			// Move mouse to the register button and click by the use of mouse
+			robot.mouseMove(1100, 667);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+			Thread.sleep(2000);
+		}
 }

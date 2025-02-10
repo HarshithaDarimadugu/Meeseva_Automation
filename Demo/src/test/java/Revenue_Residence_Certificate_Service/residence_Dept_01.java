@@ -582,58 +582,75 @@ public class residence_Dept_01 extends BaseClass {
 
 		details.getFormSignButton().click();
 		Thread.sleep(5000);
+
+		//click on sign
+		wUtility.emSigner();
+
+		while_Run();
+		Thread.sleep(3000);
 		
-//		wUtility.emSigner();
-//		//click on sign
-//		//wUtility.switchToAlertAndAccept(driver);
-//		Thread.sleep(3000);
-//		while_Run();
-//		
-//		wUtility.scroll(driver, details.getDocumentHomeButton());
-//		while_Run();
-//		
-//		//validating obc certificate details
-//		System.out.println("document name");
-//		System.out.println(details.getDocumentNameText().getText());
-//		//applicant name
-//		if(details.getDocumentApplicantNameText().getText().equals(excel.readExcelData("OBC_USER_DATA", 2, 1)))
-//		{
-//			System.out.println("applicant name in document is matched :"+ details.getDocumentApplicantNameText().getText() );
-//		}
-//		else {
-//			System.out.println("applicant name in document is not matched");
-//		}
-//		
-//		//relation name
-//		if(details.getDocumentRelationNameText().getText().equals(excel.readExcelData("OBC_USER_DATA", 3, 1)))
-//		{
-//			System.out.println("relation name in document is matched :"+ details.getDocumentRelationNameText().getText() );
-//		}
-//		else {
-//			System.out.println("relation name in document is not matched");
-//		}
-//		
-//		//village
-//		System.out.println("village name in document :"+details.getDocumentVillageNameText().getText());
-//		//mandal
-//		System.out.println("mandal name in document :"+details.getDocumentMandalNameText().getText());	
-//		//district
-//		System.out.println("district name in document :"+details.getDocumentDistrictNameText().getText());			
-//		//community
-//		System.out.println("community name in document :"+details.getDocumentCommunityText().getText());
-//		//caste name
-//		System.out.println("caste name in document :"+details.getDocumentCasteText().getText());
-//		
-//		if(details.getDocumentNameText().getText().equals("OTHER BACKWARD CLASSES (OBC) CERTIFICATE")) {
-//			
-//			excel.writeData("MEE_OBC_SERVICE", 7, 3, "PASS");
-//		}
-//		else {
-//			excel.writeData("MEE_OBC_SERVICE", 7, 3, "FAIL");
-//		}
-//		
-//		end_Report(details.getDocumentNameText(), excel.readExcelData("MEE_OBC_SERVICE", 7, 0));
-//			
+		while_Run();
+		wUtility.scroll(driver, details.getBackButtonInDocument());
+		while_Run();
+		
+		//validating residence certificate details
+		System.out.println("document name");
+		System.out.println(details.getResidenceCertificateTextInDocument().getText());
+		//applicant name
+		if(details.getApplicantNameTextInDocument().getText().equals(excel.readExcelData("Residence_User_Data", 2, 1)))
+		{
+			System.out.println("applicant name in document is matched :"+ details.getApplicantNameTextInDocument().getText() );
+		}
+		else {
+			System.out.println("applicant name in document is not matched");
+		}
+		
+		//relation name
+		if(details.getRelationshipNameTextInDocument().getText().equals(excel.readExcelData("Residence_User_Data", 3, 1)))
+		{
+			System.out.println("relation name in document is matched :"+ details.getRelationshipNameTextInDocument().getText() );
+		}
+		else {
+			System.out.println("relation name in document is not matched");
+		}
+		
+		//door no
+		if(details.getDoorNoTextInDocument().getText().equals(excel.readExcelData("Residence_User_Data", 4, 1)))
+		{
+			System.out.println("door no in document is matched :"+ details.getDoorNoTextInDocument().getText() );
+		}
+		else {
+			System.out.println("door no in document is not matched");
+		}
+		
+		//residing since
+		if(details.getResidingSinceInYearsTextInDocument().getText().equals(excel.readExcelData("Residence_User_Data", 8, 1)))
+		{
+			System.out.println("residing since in years in document is matched :"+ details.getResidingSinceInYearsTextInDocument().getText() );
+		}
+		else {
+			System.out.println("residing since in yearsin document is not matched");
+		}
+		
+		//village
+		System.out.println("village name in document :"+details.getVillageNameTextInDocument().getText());
+		//mandal
+		System.out.println("mandal name in document :"+details.getMandalNameTextInDocument().getText());	
+		//district
+		System.out.println("district name in document :"+details.getDistrictNameTextInDocument().getText());			
+	
+		
+		
+		if(details.getResidenceCertificateTextInDocument().getText().equals("RESIDENCE CERTIFICATE")) {
+			
+			excel.writeData("MEE_RESIDENCE_SERVICE", 7, 3, "PASS");
+		}
+		else {
+			excel.writeData("MEE_RESIDENCE_SERVICE", 7, 3, "FAIL");
+		}
+		
+		end_Report(details.getResidenceCertificateTextInDocument(), excel.readExcelData("MEE_RESIDENCE_SERVICE", 7, 0));
+			
 
 	}
 

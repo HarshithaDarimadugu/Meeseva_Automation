@@ -26,11 +26,25 @@ public class Access_Page {
 		return ghmcDepartmentLink;
 	}
 	
+	public WebElement getSearchBarTextField() {
+		return searchBarTextField;
+	}
+
+	public WebElement getRegistrationOfFirmLink() {
+		return registrationOfFirmLink;
+	}
+
 	@FindBy(id = "autocomplete")
 	private WebElement searchBarTextField;
 	
 	@FindBy(xpath = " //h1[contains(text(),'REGISTRATION OF FIRMS')]/ancestor::div[@class='flip_box text-center']")
 	private WebElement registrationOfFirmLink;
 	
+	@FindBy(xpath = "//a[text()='Close']")
+	private WebElement importantNoticeAlertCloseButton;
+
+	public WebElement getImportantNoticeAlertCloseButton() {
+		return importantNoticeAlertCloseButton;
+	}
 
 }

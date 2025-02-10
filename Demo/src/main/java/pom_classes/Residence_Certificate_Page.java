@@ -583,7 +583,5 @@ public class Residence_Certificate_Page {
 		return cancelPaymentButton;
 	}
 
-	
-	
 
 }

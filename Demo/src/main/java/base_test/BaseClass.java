@@ -70,6 +70,7 @@ import com.itextpdf.text.pdf.PdfPageEventHelper;
 import com.itextpdf.text.pdf.PdfWriter;
 
 import database_utility.DataBase_Utility;
+
 public class BaseClass {
 
 	// ALL OBJECTS
@@ -83,10 +84,10 @@ public class BaseClass {
 	public ExcelUtilityForSingleData excel = new ExcelUtilityForSingleData();
 	public AssertUtility assertValidate = new AssertUtility();
 	public Webdriver_Utility wUtility = new Webdriver_Utility();
-	public Java_Utility java=new Java_Utility();
-	//public DataBase_Utility db=new DataBase_Utility();
-	
-	private static int testCounter = 0;//new
+	public Java_Utility java = new Java_Utility();
+	// public DataBase_Utility db=new DataBase_Utility();
+
+	private static int testCounter = 0;// new
 
 	@BeforeSuite
 	public void configBeforeSuite() throws SQLException {
@@ -133,10 +134,10 @@ public class BaseClass {
 			sdriver = new ChromeDriver();
 		}
 		driver = sdriver;
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(50));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(2));
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		driver.manage().window().maximize();
-		//driver.manage().deleteAllCookies();
+		// driver.manage().deleteAllCookies();
 	}
 
 	@AfterClass
@@ -149,96 +150,102 @@ public class BaseClass {
 	@BeforeMethod
 	public void configBeforeMethod() throws Throwable {
 		// Increment the test counter
-        testCounter++;
+		testCounter++;
 
-        // Apply configuration only if it's not the first test
-        if (testCounter > 1) {
-            document.newPage();
-        }
+		// Apply configuration only if it's not the first test
+		if (testCounter > 1) {
+			document.newPage();
+		}
 
-        //access url
-        
-        
-        driver.get(property.readProperty("url"));
-        Home_Page login = new Home_Page(driver);
-        if (this.getClass().getName().contains("Income_01")) {
-        	//enter loginid
+		// access url
+
+		driver.get(property.readProperty("url"));
+		Home_Page login = new Home_Page(driver);
+		if (this.getClass().getName().contains("Income_01")) {
+			// enter loginid
 			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
 			assertValidate.assertByEnabled(login.getLoginIdTextField());
 			login.getLoginIdTextField().click();
 			login.getLoginIdTextField().sendKeys(property.readProperty("loginid"));
-			
-			//enter password
+
+			// enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
-		} else if(this.getClass().getName().contains("Income_Dept_01")) {
-			//enter loginid
+		} else if (this.getClass().getName().contains("Income_Dept_01")) {
+			// enter loginid
 			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
 			assertValidate.assertByEnabled(login.getLoginIdTextField());
 			login.getLoginIdTextField().click();
 			login.getLoginIdTextField().sendKeys(property.readProperty("loginid1"));
-			
-			//enter password
+
+			// enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
-		}
-		else if(this.getClass().getName().contains("Obc_Dept_01")) {
-			//enter loginid
+		} else if (this.getClass().getName().contains("Obc_Dept_01")) {
+			// enter loginid
 			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
 			assertValidate.assertByEnabled(login.getLoginIdTextField());
 			login.getLoginIdTextField().click();
 			login.getLoginIdTextField().sendKeys(property.readProperty("loginid2"));
-			
-			//enter password
+
+			// enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
-		}
-		else if (this.getClass().getName().contains("obc_application_01")) {
-        	//enter loginid
+		} else if (this.getClass().getName().contains("obc_application_01")) {
+			// enter loginid
 			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
 			assertValidate.assertByEnabled(login.getLoginIdTextField());
 			login.getLoginIdTextField().click();
 			login.getLoginIdTextField().sendKeys(property.readProperty("loginid"));
-			
-			//enter password
+
+			// enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
-		}
-		else if (this.getClass().getName().contains("residence_application_01")) {
-			//enter loginid
+		} else if (this.getClass().getName().contains("residence_application_01")) {
+			// enter loginid
 			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
 			assertValidate.assertByEnabled(login.getLoginIdTextField());
 			login.getLoginIdTextField().click();
 			login.getLoginIdTextField().sendKeys(property.readProperty("loginid"));
-			
-			//enter password
+
+			// enter password
+			login.getPasswordTextField().click();
+			login.getPasswordTextField().sendKeys(property.readProperty("password"));
+		} else if (this.getClass().getName().contains("residence_Dept_01")) {
+			// enter loginid
+			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
+			assertValidate.assertByEnabled(login.getLoginIdTextField());
+			login.getLoginIdTextField().click();
+			login.getLoginIdTextField().sendKeys(property.readProperty("loginid2"));
+
+			// enter password
+			login.getPasswordTextField().click();
+			login.getPasswordTextField().sendKeys(property.readProperty("password"));
+
+		} else if (this.getClass().getName().contains("Birth_Application_01")) {
+			// enter loginid
+			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
+			assertValidate.assertByEnabled(login.getLoginIdTextField());
+			login.getLoginIdTextField().click();
+			login.getLoginIdTextField().sendKeys(property.readProperty("loginid"));
+
+			// enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
 		}
-			else if (this.getClass().getName().contains("residence_Dept_01")) {
-				//enter loginid
-				assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
-				assertValidate.assertByEnabled(login.getLoginIdTextField());
-				login.getLoginIdTextField().click();
-				login.getLoginIdTextField().sendKeys(property.readProperty("loginid2"));
-				
-				//enter password
-				login.getPasswordTextField().click();
-				login.getPasswordTextField().sendKeys(property.readProperty("password"));
-					
-		} 
-			else if(this.getClass().getName().contains("Birth_Application_01")) {
-				//enter loginid
-				assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
-				assertValidate.assertByEnabled(login.getLoginIdTextField());
-				login.getLoginIdTextField().click();
-				login.getLoginIdTextField().sendKeys(property.readProperty("loginid"));
-				
-				//enter password
-				login.getPasswordTextField().click();
-				login.getPasswordTextField().sendKeys(property.readProperty("password"));
-			}
-		//click on login button
+		else if (this.getClass().getName().contains("Registration_of_firm_01")) {
+			// enter loginid
+			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
+			assertValidate.assertByEnabled(login.getLoginIdTextField());
+			login.getLoginIdTextField().click();
+			login.getLoginIdTextField().sendKeys(property.readProperty("loginid"));
+
+			// enter password
+			login.getPasswordTextField().click();
+			login.getPasswordTextField().sendKeys(property.readProperty("password"));
+		}
+		
+		// click on login button
 		login.getLoginButton().click();
 	}
 
@@ -284,19 +291,16 @@ public class BaseClass {
 //			paragraph1("==>ON FINISH<==");
 //			fail1(scenario);
 //		}
-		//document.newPage();
+		// document.newPage();
 	}
-	
-	public void end_Report(WebElement ele,String ex_Message,String scenario) throws Exception
-	{
+
+	public void end_Report(WebElement ele, String ex_Message, String scenario) throws Exception {
 		try {
 			if (ele.getText().contains(ex_Message)) {
 				imageCell();
 				paragraph1("==>ON FINISH<==");
 				pass1(scenario);
-			}
-			else
-			{
+			} else {
 				imageCell();
 				paragraph1("==>ON FINISH<==");
 				fail1(scenario);
@@ -311,19 +315,19 @@ public class BaseClass {
 		}
 	}
 
-	public void endReport(boolean boo,String scenario) throws Throwable {
+	public void endReport(boolean boo, String scenario) throws Throwable {
 		try {
-		if (boo==true) {
-			imageCell();
-			paragraph1("==>ON FINISH<==");
-			pass1(scenario);
-		} else if (boo==false) {
-			imageCell();
-			paragraph1("==>ON FINISH<==");
-			fail1(scenario);
-			Assert.fail();
-		}
-		}catch (Exception e) {
+			if (boo == true) {
+				imageCell();
+				paragraph1("==>ON FINISH<==");
+				pass1(scenario);
+			} else if (boo == false) {
+				imageCell();
+				paragraph1("==>ON FINISH<==");
+				fail1(scenario);
+				Assert.fail();
+			}
+		} catch (Exception e) {
 			e.printStackTrace();
 			imageCell();
 			paragraph1("==>ON FINISH<==");
@@ -331,8 +335,7 @@ public class BaseClass {
 			Assert.fail();
 		}
 	}
-	
-	
+
 //	public void status(WebElement elm, String scenario) throws Exception {
 //		if (elm.isDisplayed()) {
 //			imageCell();
@@ -870,5 +873,4 @@ public class BaseClass {
 		Thread.sleep(i);
 	}
 
-	
 }

@@ -743,6 +743,83 @@ public class ADB_MRO_ResidenceC_Details_Page {
 		return applicantAgreeToGiveSpeedPostText;
 	}
 	
+	@FindBy(xpath = "//u[text()='RESIDENCE CERTIFICATE']")
+	private WebElement residenceCertificateTextInDocument;
+	
+	@FindBy(id = "lblName")
+	private WebElement applicantNameTextInDocument;
+	
+	@FindBy(id = "lblDoughterof")
+	private WebElement relationshipNameTextInDocument;
+	
+	@FindBy(id = "lblVillage")
+	private WebElement villageNameTextInDocument;
+	
+	@FindBy(id = "lblDoorNo")
+	private WebElement doorNoTextInDocument;
+	
+	@FindBy(id = "lblMamdal")
+	private WebElement mandalNameTextInDocument;
+	
+	public WebElement getResidenceCertificateTextInDocument() {
+		return residenceCertificateTextInDocument;
+	}
+
+	public WebElement getApplicantNameTextInDocument() {
+		return applicantNameTextInDocument;
+	}
+
+	public WebElement getRelationshipNameTextInDocument() {
+		return relationshipNameTextInDocument;
+	}
+
+	public WebElement getVillageNameTextInDocument() {
+		return villageNameTextInDocument;
+	}
+
+	public WebElement getDoorNoTextInDocument() {
+		return doorNoTextInDocument;
+	}
+
+	public WebElement getMandalNameTextInDocument() {
+		return mandalNameTextInDocument;
+	}
+
+	public WebElement getDistrictNameTextInDocument() {
+		return districtNameTextInDocument;
+	}
+
+	public WebElement getStateNameTextInDocument() {
+		return stateNameTextInDocument;
+	}
+
+	public WebElement getResidingSinceInYearsTextInDocument() {
+		return residingSinceInYearsTextInDocument;
+	}
+
+	public WebElement getBackButtonInDocument() {
+		return backButtonInDocument;
+	}
+
+	public WebElement getHomeButtonInDocument() {
+		return homeButtonInDocument;
+	}
+
+
+	@FindBy(id = "lblDistrict")
+	private WebElement districtNameTextInDocument;
+	
+	@FindBy(id = "lblstate")
+	private WebElement stateNameTextInDocument;
+	
+	@FindBy(id = "lblResidingSince")
+	private WebElement residingSinceInYearsTextInDocument;
+	
+	@FindBy(id = "btnHome")
+	private WebElement backButtonInDocument;
+	
+	@FindBy(id = "btnHome0")
+	private WebElement homeButtonInDocument;
 	
 
 }

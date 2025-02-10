@@ -571,12 +571,15 @@ public class Obc_Dept_01 extends BaseClass {
 		details.getFormSignButton().click();
 		Thread.sleep(5000);
 		
-		wUtility.emSigner();
-		//click on sign
-		//wUtility.switchToAlertAndAccept(driver);
-		Thread.sleep(3000);
-		while_Run();
+//		wUtility.emSigner();
+//		//click on sign
+//		//wUtility.switchToAlertAndAccept(driver);
+//		Thread.sleep(3000);
 		
+		wUtility.emSigner();
+		
+		while_Run();
+		Thread.sleep(9000);
 		wUtility.scroll(driver, details.getDocumentHomeButton());
 		while_Run();
 		
