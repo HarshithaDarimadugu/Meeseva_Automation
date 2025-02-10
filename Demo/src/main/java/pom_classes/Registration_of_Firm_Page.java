@@ -187,7 +187,7 @@ public class Registration_of_Firm_Page {
 	@FindBy(xpath = "(//label[contains(text(),'Door No')])[2]")
 	private WebElement principalDoorNoText;
 	
-	@FindBy(id = " principalDoorNo")
+	@FindBy(id = "principalDoorNo")
 	private WebElement principalDoorNoTextField;
 	
 	@FindBy(xpath = "(//label[contains(text(),'Street: ')])[2]")
@@ -220,13 +220,13 @@ public class Registration_of_Firm_Page {
 	@FindBy(id = "principalMandal")
 	private WebElement principalMandalDropDown;
 	
-	@FindBy(id = "//label[contains(text(),'Registration District ')]")
+	@FindBy(xpath = "//label[contains(text(),'Registration District ')]")
 	private WebElement registrationDistrictNameText;
 	
 	@FindBy(id = "registrationDistrictName")
 	private WebElement registrationDistrictNameDropDown;
 	
-	@FindBy(id = "(//label[contains(text(),'Pin Code')])[2]")
+	@FindBy(xpath = "(//label[contains(text(),'Pin Code')])[2]")
 	private WebElement principalPincodeText;
 	
 	@FindBy(id = "principalPinCode")
@@ -392,7 +392,7 @@ public class Registration_of_Firm_Page {
 	private WebElement documentTypeText;
 	
 	@FindBy(id = "docTypeId")
-	private WebElement documentTypeTextField;
+	private WebElement documentTypeDropDown;
 	
 	@FindBy(xpath = "(//label[contains(text(),'Document Name')])[1]")
 	private WebElement documentNameText;
@@ -925,8 +925,8 @@ public class Registration_of_Firm_Page {
 		return documentTypeText;
 	}
 
-	public WebElement getDocumentTypeTextField() {
-		return documentTypeTextField;
+	public WebElement getDocumentTypeDropDown() {
+		return documentTypeDropDown;
 	}
 
 	public WebElement getDocumentNameText() {
@@ -981,6 +981,203 @@ public class Registration_of_Firm_Page {
 	
 	@FindBy(xpath = "//a[text()='Download Self Signed Declaration Document.']")
 	private WebElement selfSignedDocumentLink;
+	
+	@FindBy(xpath = "//div[contains(text(),'Payment Details')]")
+	private WebElement paymentDetailsText;
+	
+	@FindBy(xpath = "//label[text()='Statutory Fee:']")
+	private WebElement statutoryFeeText;
+	
+	@FindBy(id = "serviceCharge")
+	private WebElement statutoryFeeReadOnlyField;
+	
+	@FindBy(xpath = "//label[text()='Service Tax:']")
+	private WebElement serviceTaxText;
+	
+	@FindBy(id = "serviceTax")
+	private WebElement serviceTaxReadOnlyField;
+	
+	@FindBy(xpath = "//label[text()='User Charge:']")
+	private WebElement userChargesText;
+	
+	@FindBy(id = "userCharge")
+	private WebElement userChargesReadOnlyField;
+	
+	@FindBy(xpath = "//label[text()='Postal Charges: ']")
+	private WebElement postalChargesText;
+	
+	@FindBy(id = "postalCharge")
+	private WebElement postalChargeReadOnlyField;
+	
+	@FindBy(xpath = "//label[text()='Total Amount: ']")
+	private WebElement totalAmountText;
+	
+	@FindBy(id = "totalAmount")
+	private WebElement totalAmountReadOnlyField;
+	
+	@FindBy(id = "save")
+	private WebElement payAndContinueButton;
+	
+	@FindBy(id = "cancelId")
+	private WebElement cancelButton;
+	
+	@FindBy(xpath = "//footer[@class='footerBg']")
+	private WebElement footerTextAndLinks;
+	
+	@FindBy(id = "heading")
+	private WebElement paymentOptionsText;
+	
+	@FindBy(xpath = "//span[contains(text(),'CASH')]/parent::a")
+	private WebElement cashPaymentOptionLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'TWALLET PG')]/parent::a")
+	private WebElement twalletPgPaymentOptionLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'TWALLET')]/parent::a")
+	private WebElement twalletPaymentOptionLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'HDFC PG')]/parent::a")
+	private WebElement hdfcPGPaymentOptionLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'DD')]/parent::a")
+	private WebElement ddPaymentOptionLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'SBIePAY')]/parent::a")
+	private WebElement sbiepayPaymentOptionLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'BANKS')]/parent::a")
+	private WebElement banksPaymentOptionLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'QRCODE')]/parent::a")
+	private WebElement qrcodePaymentOptionLink;
+	
+	@FindBy(id = "paymentsubmit")
+	private WebElement makePaymentButton;
+	
+	@FindBy(id = "paymentcancel")
+	private WebElement cancelPaymentButton;
+	
+	@FindBy(id = "//div[@id='PrintContent']/child::div")
+	private WebElement registrationOfFirmNameTextInReceipt;
+	
+	@FindBy(id = "//span[text()='Acknowledgement Number']")
+	private WebElement acknowledgementNumberText;
+	
+	@FindBy(id = "//span[text()='Acknowledgement Number']/parent::td/following-sibling::td")
+	private WebElement acknowledgementNumberInReceipt;
 
+	public WebElement getPaymentDetailsText() {
+		return paymentDetailsText;
+	}
+
+	public WebElement getStatutoryFeeText() {
+		return statutoryFeeText;
+	}
+
+	public WebElement getStatutoryFeeReadOnlyField() {
+		return statutoryFeeReadOnlyField;
+	}
+
+	public WebElement getServiceTaxText() {
+		return serviceTaxText;
+	}
+
+	public WebElement getServiceTaxReadOnlyField() {
+		return serviceTaxReadOnlyField;
+	}
+
+	public WebElement getUserChargesText() {
+		return userChargesText;
+	}
+
+	public WebElement getUserChargesReadOnlyField() {
+		return userChargesReadOnlyField;
+	}
+
+	public WebElement getPostalChargesText() {
+		return postalChargesText;
+	}
+
+	public WebElement getPostalChargeReadOnlyField() {
+		return postalChargeReadOnlyField;
+	}
+
+	public WebElement getTotalAmountText() {
+		return totalAmountText;
+	}
+
+	public WebElement getTotalAmountReadOnlyField() {
+		return totalAmountReadOnlyField;
+	}
+
+	public WebElement getPayAndContinueButton() {
+		return payAndContinueButton;
+	}
+
+	public WebElement getCancelButton() {
+		return cancelButton;
+	}
+
+	public WebElement getFooterTextAndLinks() {
+		return footerTextAndLinks;
+	}
+
+	public WebElement getPaymentOptionsText() {
+		return paymentOptionsText;
+	}
+
+	public WebElement getCashPaymentOptionLink() {
+		return cashPaymentOptionLink;
+	}
+
+	public WebElement getTwalletPgPaymentOptionLink() {
+		return twalletPgPaymentOptionLink;
+	}
+
+	public WebElement getTwalletPaymentOptionLink() {
+		return twalletPaymentOptionLink;
+	}
+
+	public WebElement getHdfcPGPaymentOptionLink() {
+		return hdfcPGPaymentOptionLink;
+	}
+
+	public WebElement getDdPaymentOptionLink() {
+		return ddPaymentOptionLink;
+	}
+
+	public WebElement getSbiepayPaymentOptionLink() {
+		return sbiepayPaymentOptionLink;
+	}
+
+	public WebElement getBanksPaymentOptionLink() {
+		return banksPaymentOptionLink;
+	}
+
+	public WebElement getQrcodePaymentOptionLink() {
+		return qrcodePaymentOptionLink;
+	}
+
+	public WebElement getMakePaymentButton() {
+		return makePaymentButton;
+	}
+
+	public WebElement getCancelPaymentButton() {
+		return cancelPaymentButton;
+	}
+
+	public WebElement getRegistrationOfFirmNameTextInReceipt() {
+		return registrationOfFirmNameTextInReceipt;
+	}
+
+	public WebElement getAcknowledgementNumberText() {
+		return acknowledgementNumberText;
+	}
+
+	public WebElement getAcknowledgementNumberInReceipt() {
+		return acknowledgementNumberInReceipt;
+	}
+	
+	
 
 }
