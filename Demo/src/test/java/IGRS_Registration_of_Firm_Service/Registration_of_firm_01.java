@@ -57,8 +57,8 @@ public class Registration_of_firm_01 extends BaseClass {
 ////		html.sendKeys(Keys.chord(Keys.CONTROL, Keys.ADD));
 //		html.sendKeys(Keys.chord(Keys.CONTROL, Keys.SUBTRACT));
 		
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("document.body.style.zoom = '0.5'");
+//		JavascriptExecutor executor = (JavascriptExecutor)driver;
+//		executor.executeScript("document.body.style.zoom = '0.5'");
 		
 		// validating the service name
 		Registration_of_Firm_Page firm = new Registration_of_Firm_Page(driver);
@@ -585,7 +585,7 @@ public class Registration_of_firm_01 extends BaseClass {
 		assertValidate.assertByEnabled(firm.getDocumentFileUpload());
 		wUtility.click(driver, firm.getDocumentFileUpload());
 		wUtility.uploadFile(
-				"C:\\Users\\DELL\\Documents\\Meeseva_Automation\\Demo\\src\\test\\resources\\image\\demo.pdf");
+				"C:\\Users\\Harshitha\\Downloads\\Demo\\Demo\\src\\test\\resources\\image\\demo.pdf");
 
 		System.out.println("add document button");
 		assertValidate.assertByWebelementVisibility(firm.getAddDocumentButton());
@@ -600,7 +600,7 @@ public class Registration_of_firm_01 extends BaseClass {
 		firm.getDocumentNameTextField().sendKeys(excel.readExcelData("Firm_User_Data", 27, 1));
 		wUtility.click(driver, firm.getDocumentFileUpload());
 		wUtility.uploadFile(
-				"C:\\Users\\DELL\\Documents\\Meeseva_Automation\\Demo\\src\\test\\resources\\image\\demo.pdf");
+				"C:\\Users\\Harshitha\\Downloads\\Demo\\Demo\\src\\test\\resources\\image\\demo.pdf");
 		Thread.sleep(2000);
 		firm.getAddDocumentButton().click();
 		Thread.sleep(5000);
@@ -611,7 +611,7 @@ public class Registration_of_firm_01 extends BaseClass {
 		firm.getDocumentNameTextField().sendKeys(excel.readExcelData("Firm_User_Data", 28, 1));
 		wUtility.click(driver, firm.getDocumentFileUpload());
 		wUtility.uploadFile(
-				"C:\\Users\\DELL\\Documents\\Meeseva_Automation\\Demo\\src\\test\\resources\\image\\demo.pdf");
+				"C:\\Users\\Harshitha\\Downloads\\Demo\\Demo\\src\\test\\resources\\image\\demo.pdf");
 		Thread.sleep(2000);
 		firm.getAddDocumentButton().click();
 		Thread.sleep(5000);
@@ -622,7 +622,7 @@ public class Registration_of_firm_01 extends BaseClass {
 		firm.getDocumentNameTextField().sendKeys(excel.readExcelData("Firm_User_Data", 29, 1));
 		wUtility.click(driver, firm.getDocumentFileUpload());
 		wUtility.uploadFile(
-				"C:\\Users\\DELL\\Documents\\Meeseva_Automation\\Demo\\src\\test\\resources\\image\\demo.pdf");
+				"C:\\Users\\Harshitha\\Downloads\\Demo\\Demo\\src\\test\\resources\\image\\demo.pdf");
 		Thread.sleep(2000);
 		firm.getAddDocumentButton().click();
 		Thread.sleep(5000);
@@ -650,8 +650,8 @@ public class Registration_of_firm_01 extends BaseClass {
 //		wUtility.scroll(driver, firm.getShowPaymentButton());
 //		while_Run();
 
-		JavascriptExecutor executor1 = (JavascriptExecutor)driver;
-		executor1.executeScript("document.body.style.zoom = '0.5'");
+//		C:\Users\DELL\Documents\Meeseva_Automation\Demo\src\test\resources\image\demo.pdf
+		
 		
 		// payment details
 		System.out.println("payment details");

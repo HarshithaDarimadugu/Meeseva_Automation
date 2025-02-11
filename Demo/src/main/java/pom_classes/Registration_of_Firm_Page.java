@@ -1057,13 +1057,13 @@ public class Registration_of_Firm_Page {
 	@FindBy(id = "paymentcancel")
 	private WebElement cancelPaymentButton;
 	
-	@FindBy(id = "//div[@id='PrintContent']/child::div")
+	@FindBy(xpath = "//div[@id='PrintContent']/child::div")
 	private WebElement registrationOfFirmNameTextInReceipt;
 	
-	@FindBy(id = "//span[text()='Acknowledgement Number']")
+	@FindBy(xpath = "//span[text()='Acknowledgement Number']")
 	private WebElement acknowledgementNumberText;
 	
-	@FindBy(id = "//span[text()='Acknowledgement Number']/parent::td/following-sibling::td")
+	@FindBy(xpath = "//span[text()='Acknowledgement Number']/parent::td/following-sibling::td")
 	private WebElement acknowledgementNumberInReceipt;
 
 	public WebElement getPaymentDetailsText() {

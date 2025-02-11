@@ -232,8 +232,7 @@ public class BaseClass {
 			// enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
-		}
-		else if (this.getClass().getName().contains("Registration_of_firm_01")) {
+		} else if (this.getClass().getName().contains("Registration_of_firm_01")) {
 			// enter loginid
 			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
 			assertValidate.assertByEnabled(login.getLoginIdTextField());
@@ -243,8 +242,28 @@ public class BaseClass {
 			// enter password
 			login.getPasswordTextField().click();
 			login.getPasswordTextField().sendKeys(property.readProperty("password"));
+		} else if (this.getClass().getName().contains("DLF_Action_In_Firm_Page")) {
+			// enter loginid
+			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
+			assertValidate.assertByEnabled(login.getLoginIdTextField());
+			login.getLoginIdTextField().click();
+			login.getLoginIdTextField().sendKeys(property.readProperty("DLF_login_Firm"));
+
+			// enter password
+			login.getPasswordTextField().click();
+			login.getPasswordTextField().sendKeys(property.readProperty("password"));
+		} else if (this.getClass().getName().contains("Registration_of_firm_01")) {
+			// enter loginid
+			assertValidate.assertByWebelementVisibility(login.getLoginIdTextField());
+			assertValidate.assertByEnabled(login.getLoginIdTextField());
+			login.getLoginIdTextField().click();
+			login.getLoginIdTextField().sendKeys(property.readProperty("DR_login_Firm"));
+
+			// enter password
+			login.getPasswordTextField().click();
+			login.getPasswordTextField().sendKeys(property.readProperty("password"));
 		}
-		
+
 		// click on login button
 		login.getLoginButton().click();
 	}

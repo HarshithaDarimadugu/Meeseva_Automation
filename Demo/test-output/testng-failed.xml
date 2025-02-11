@@ -3,19 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="IGRS_Registration_of_Firm_Service.Registration_of_firm_01">
+      <class name="IGRS_Registration_of_Firm_Service.DLF_Action_In_Firm_Page">
         <methods>
           <include name="configAfterMethod"/>
           <include name="configBeforeClass"/>
           <include name="configBeforeMethod"/>
           <include name="beforeTest"/>
           <include name="configAfterSuite"/>
-          <include name="firm_process"/>
+          <include name="DLF_process"/>
           <include name="configBeforeSuite"/>
           <include name="afterTest"/>
           <include name="configAfterClass"/>
         </methods>
-      </class> <!-- IGRS_Registration_of_Firm_Service.Registration_of_firm_01 -->
+      </class> <!-- IGRS_Registration_of_Firm_Service.DLF_Action_In_Firm_Page -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
